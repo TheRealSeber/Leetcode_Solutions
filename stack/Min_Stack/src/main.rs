@@ -45,7 +45,6 @@ impl MinStack {
     }
 
     fn top(&mut self) -> Option<i32> {
-        self.top.as_ref().unwrap().number;
         if let Some(top) = std::mem::replace(&mut self.top, None) {
             self.top = match top.next {
                 Some(node) => Some(*node),
